@@ -1,0 +1,21 @@
+listen: ":9210"
+devices:
+  - pins:
+      - name: "generator_input"
+        help: "Generator have external electricity"
+        port: "B"
+        pin: 2
+        pull_up: true
+        revert: true
+      - name: "generator_error"
+        help: "General generator error, manual inspection required"
+        port: "B"
+        pin: 4
+        pull_up: true
+        revert: true
+      - name: "generator_output"
+        help: "Generator is producing electricity"
+        port: "B"
+        pin: 5
+        pull_up: true
+        revert: true
