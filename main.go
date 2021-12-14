@@ -3,6 +3,8 @@ package main
 import (
 	"context"
 	"flag"
+	"github.com/apex/log"
+	"github.com/kvaster/apexutils"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
@@ -12,7 +14,6 @@ import (
 	"syscall"
 	"time"
 	"usbioboard_exporter/ioboard"
-	"usbioboard_exporter/log"
 	"usbioboard_exporter/utils"
 )
 
@@ -31,7 +32,7 @@ func (s *Config) UnmarshalYAML(unmarshal func(interface{}) error) error {
 
 func main() {
 	flag.Parse()
-	log.ParseFlags()
+	apexutils.ParseFlags()
 
 	data, err := ioutil.ReadFile(*configFile)
 	if err != nil {
